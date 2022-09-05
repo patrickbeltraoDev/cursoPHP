@@ -1,0 +1,113 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F9F7;
+    box-shadow: 5px 5px 8px #ddd, -5px -5px 8px #ddd;
+}
+
+.title{
+    width: 100%;
+    background-color: #750D37;
+    color: #F7F9F7;
+    text-align: center;
+    
+}
+
+.title h1{
+    font-weight: 300;
+    font-size: 2.4em;
+}
+
+.title h2{
+    font-weight: 300;
+    font-size: 1.9em;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.input-data{
+    display: flex;
+    flex-direction: column;
+    padding: 10px; 
+}
+
+.input-data input{
+    padding: 8px;
+    font-size: 1.4em;
+}
+
+.input-data input:hover{
+    background-color: #750D37;
+    color: #F7F9F7;
+}
+
+.cadastro button{
+    padding: 8px;
+    font-size: 1.4em;
+    width: 50%;
+    background-color: #750D37;
+    color: #F7F9F7;
+    border-radius: 5px;
+}
+
+.cadastro button:hover{
+    background-color: #210124;
+    color: #fff;
+}
+
+.main{
+    display: flex;
+    padding: 10px;
+    background-color: #DBF9F0;  
+    width: 95%;
+    margin-bottom: 8px;
+}
+
+.painel{
+    border-left: 1px solid #210124; 
+    padding: 20px;
+}
+
+.btn{
+    padding: 8px;
+    font-size: 1.2em;
+    background-color: #750D37;
+    color: #F7F9F7;
+    border-right: 1px solid #210124;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.btn:hover{
+    background-color: #210124;
+    color: #fff;
+}
+
+.nav{
+    display: flex;
+    padding: 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #210124;
+}
+
+.display{
+    padding: 8px;
+    font-size: 1.4em;
+    color: #210124;
+}
