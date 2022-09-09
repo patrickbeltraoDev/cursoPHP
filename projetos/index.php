@@ -2,7 +2,19 @@
 
     include_once('Cadastro.php');
 
-    $p = new Cadastro('mysql', 'clientes', 'localhost:3306', 'root', 'Paradoxo@555');
+    // $sgbd = 'mysql';
+    // $dbname = '';
+    // $host = 'localhost:3306';
+    // $user = 'root';
+    // $password = 'Paradoxo@555';
+
+    $sgbd = 'mysql';
+    $dbname = 'pci';
+    $host = '172.30.200.91:3306';
+    $user = 'patrick.beltrao';
+    $password = 'PCI2022@qualidade#';
+
+    $p = new Cadastro("$sgbd", "$dbname", "$host", "$user", "$password");
 
 ?>
 
@@ -18,32 +30,44 @@
     </head>
     <body>
         <table>
-            <tr>
-                <td>NOME</td>
-                <td>SOBRENOME</td>
-                <td>CPF</td>
-                <td>EMAIL</td>
-                <td>SENHA</td>
-            </tr>
-
-            <?php 
-                $dados = $p->buscarDados();
-                echo '<pre>';
-                var_dump($dados);
-                echo '</pre>';
-                // if(count($dados) > 0){
-                //     for ($i=0; $i < count($dados); $i++) { 
-                //         echo '<tr>';
-                //         foreach($dados as $k => $v){
-                //             if($k != 'id'){
-                //                 echo "<td>" . $v . "<td>";
-                //             }
-                //             echo '<td><a href="#">Editar</a><a href="#">Excluir</a>';
-                //         }
-                //         echo '</tr>';
-                //     }
-                // }
-            ?>
+            <thead>
+                <tr>
+                    <th>TR</th>
+                    <th>NOME</th>
+                    <th>UF</th>
+                    <th>CIDADE</th>
+                    <th>ENDEREÇO</th>
+                    <th>ACESSO REF</th>
+                    <th>CDO REF</th>
+                    <th>PROBLEMA</th>
+                    <th>EQUIPE</th>
+                    <th>DATA CADASTRO</th>
+                    <th>STATUS</th>
+                    <th>OBSERVAÇÃO</th>
+                    <th>PRAZO RETORNO</th>
+                </tr>   
+            </thead>
+            <tbody>
+                <?php 
+                    $dados = $p->buscarDados();
+                    // echo '<pre>';
+                    // print_r($dados);
+                    // echo  '<br>';
+                    // echo '</pre>';
+                    if(count($dados) > 0){
+                        for ($i=0; $i < count($dados); $i++) { 
+                            echo "<tr>";
+                            foreach($dados[$i] as $k => $v){
+                                if($k != 'id'){
+                                    echo "<td>" . $v . "</td>";
+                                }
+                            }
+                            echo '<td><a href="#">Editar</a><a href="#">Excluir</a>';
+                            echo '</tr>';
+                        }
+                    }
+                ?>
+            </tbody>
         </table>
 
        

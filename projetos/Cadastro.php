@@ -6,7 +6,7 @@
 
         public function __construct($sgbd, $dbname, $host, $user, $senha){
             try{
-                $pdo = new PDO("{$sgbd}:dbname={$dbname};host={$host}", $user, $senha);
+                $this->pdo = new PDO("{$sgbd}:dbname={$dbname};host={$host}", $user, $senha);
             }
             catch(PDOException $e){
                 echo "Erro com o acesso ao banco de dados: " . $e->getMessage();
@@ -17,7 +17,8 @@
 
         function buscarDados(){
             $res = array(); 
-            $cmd = $this->pdo->query("SELECT * FROM clientes.cdo ORDER BY id DESC");
+            $sql = "SELECT * FROM pci.vistoria ORDER BY id DESC";
+            $cmd = $this->pdo->query($sql);
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
