@@ -48,7 +48,7 @@
             echo "Implementando o Método 2, para ser instanciando!";
         }
 
-        public function metodo3(){
+        public funcion metodo3(){
             echo "Instanciando o Método3 da classe Abstrata!";
         }
     }
@@ -57,6 +57,8 @@
     $parQualquer = "Um parâmetro Qualquer!";
     $exemplo = new Classe($parQualquer);
     $exemplo->metodo3();
+
+    
 
 
 
